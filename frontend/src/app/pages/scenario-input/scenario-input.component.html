@@ -1,1 +1,18 @@
-<p>scenario-input works!</p>
+<div class="scenario-page">
+  <h2>Describe Your Negotiation Scenario</h2>
+
+  <textarea
+    [(ngModel)]="scenario"
+    rows="6"
+    placeholder="e.g. How should a city negotiate water usage between agriculture and residential needs?"
+    class="scenario-textarea"
+  ></textarea>
+
+  <button
+    class="submit-btn"
+    (click)="onSubmit()"
+    [disabled]="!scenario.trim()"
+  >
+    Continue
+  </button>
+</div>

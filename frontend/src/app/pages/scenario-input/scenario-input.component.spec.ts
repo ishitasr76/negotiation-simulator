@@ -8,7 +8,7 @@ describe('ScenarioInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ScenarioInputComponent]
+      declarations: [ScenarioInputComponent]
     })
     .compileComponents();
 

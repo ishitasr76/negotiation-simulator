@@ -5,7 +5,17 @@
   "projects": {
     "negotiationsim": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -94,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "cd0ece14-773c-4e30-b181-45c1f972eb69"
+    "analytics": false
   }
 }

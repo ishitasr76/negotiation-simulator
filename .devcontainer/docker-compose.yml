@@ -3,8 +3,10 @@ version: '3.8'
 services:
   negotiationsim-dev:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ..:/workspace:cached
+      - .:/workspace
+    ports:
+      - "4200:4200"
     command: sleep infinity

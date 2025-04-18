@@ -1,32 +1,92 @@
 .scenario-page {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .scenario-textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: vertical;
-    margin-bottom: 1rem;
-  }
-  
-  .submit-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:disabled {
-    background-color: #888;
-    cursor: not-allowed;
-  }
-  
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.scenario-textarea,
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.stakeholder-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 1.5rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.stakeholder-entry textarea {
+  grid-column: span 2;
+  resize: vertical;
+}
+
+.stakeholder-entry button {
+  grid-column: span 2;
+  justify-self: end;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stakeholder-entry button:hover {
+  background-color: #b71c1c;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.frameworks,
+.negotiation-type,
+.stakeholders-section {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.frameworks label,
+.frameworks div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.frameworks input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

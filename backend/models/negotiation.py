@@ -11,3 +11,6 @@ class NegotiationInput(BaseModel):
     negotiation_type: str
     stakeholders: List[Stakeholder]
     frameworks: List[str]
+    
+class NegotiationOutput(BaseModel):
+    summary: str

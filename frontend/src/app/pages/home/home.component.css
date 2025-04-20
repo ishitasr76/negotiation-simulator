@@ -4,3 +4,15 @@
   justify-content: center;
   align-items: center;
 }
+.allframeworks{
+    display: flex;
+    flex-direction: column;
+}
+.frameworks{
+    display: flex;
+    flex-direction: column;
+    background-color:#004080;
+    margin: 2%;
+    padding: 1%;
+    color: white;
+}

@@ -1,9 +1,11 @@
 .scenario-page {
   max-width: 800px;
-  margin: 60px auto;
-  padding: 1rem;
+margin:  auto;
+padding: 1rem;
   text-align: center;
   font-family: Arial, sans-serif;
+  flex:1;
+
 }
 
 h2, h3 {
@@ -89,4 +91,19 @@ button:disabled {
 
 .frameworks input[type="checkbox"] {
   margin-right: 0.5rem;
+}
+.stakeholder-name{
+  height: 59%;
+  border-radius: 7px;
+}
+
+.outer-scenario-page{
+  display: flex;
+ flex-direction: row;
+ align-items: stretch;
+}
+.answer-box{
+  background-color: yellow;
+  flex:1;
+
 }

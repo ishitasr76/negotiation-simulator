@@ -47,7 +47,7 @@ export class ScenarioInputComponent {
   removeStakeholder(index: number) {
     this.stakeholders.splice(index, 1);
   }
-
+  showResults = false;
   onSubmit() {
     const inputData = {
       scenario: this.scenario.trim(),
@@ -58,6 +58,7 @@ export class ScenarioInputComponent {
 
     localStorage.setItem('scenarioData', JSON.stringify(inputData));
     console.log('Saved scenario data:', inputData);
-    this.router.navigate(['/results']);
+    // this.router.navigate(['/results']);
+    this.showResults=true
   }
 }

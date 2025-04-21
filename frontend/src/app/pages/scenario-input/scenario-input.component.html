@@ -1,66 +1,75 @@
-<div class="scenario-page">
-  <h2>Describe Your Negotiation Scenario</h2>
-
-  <textarea
-    [(ngModel)]="scenario"
-    rows="6"
-    placeholder="e.g. How should a city negotiate water usage between agriculture and residential needs?"
-    class="scenario-textarea"
-  ></textarea>
-
-  <!-- Stakeholders Section -->
-  <div class="stakeholders-section">
-    <h3>Stakeholders Involved</h3>
-    <div
-      *ngFor="let stakeholder of stakeholders; let i = index"
-      class="stakeholder-entry"
-    >
-      <input
-        [(ngModel)]="stakeholder.name"
-        placeholder="Name"
-      />
-
-      <select [(ngModel)]="stakeholder.role">
-        <option value="">Select Role</option>
-        <option *ngFor="let role of stakeholderRoles" [value]="role">{{ role }}</option>
+<div class = "outer-scenario-page">
+  <div class="scenario-page">
+    <h2>Describe Your Negotiation Scenario</h2>
+  
+    <textarea
+      [(ngModel)]="scenario"
+      rows="6"
+      placeholder="e.g. How should a city negotiate water usage between agriculture and residential needs?"
+      class="scenario-textarea"
+    ></textarea>
+  
+    <!-- Stakeholders Section -->
+    <div class="stakeholders-section">
+      <h3>Stakeholders Involved</h3>
+      <div
+        *ngFor="let stakeholder of stakeholders; let i = index"
+        class="stakeholder-entry"
+      >
+        <input
+          [(ngModel)]="stakeholder.name"
+          placeholder="Name"
+          class ="stakeholder-name"
+        />
+  
+        <select [(ngModel)]="stakeholder.role">
+          <option value="">Select Role</option>
+          <option *ngFor="let role of stakeholderRoles" [value]="role">{{ role }}</option>
+        </select>
+  
+        <textarea
+          [(ngModel)]="stakeholder.description"
+          rows="2"
+          placeholder="Describe their perspective, motivations, or background"
+        ></textarea>
+  
+        <button (click)="removeStakeholder(i)">Remove</button>
+      </div>
+      <button (click)="addStakeholder()">Add Stakeholder</button>
+    </div>
+  
+    <!-- Negotiation Type Dropdown -->
+    <div class="negotiation-type">
+      <h3>Negotiation Type</h3>
+      <select [(ngModel)]="negotiationType">
+        <option value="">Select a type</option>
+        <option value="distributive">Distributive (zero-sum)</option>
+        <option value="integrative">Integrative (win-win)</option>
+        <option value="multi-party">Multi-party</option>
       </select>
-
-      <textarea
-        [(ngModel)]="stakeholder.description"
-        rows="2"
-        placeholder="Describe their perspective, motivations, or background"
-      ></textarea>
-
-      <button (click)="removeStakeholder(i)">Remove</button>
     </div>
-    <button (click)="addStakeholder()">Add Stakeholder</button>
-  </div>
-
-  <!-- Negotiation Type Dropdown -->
-  <div class="negotiation-type">
-    <h3>Negotiation Type</h3>
-    <select [(ngModel)]="negotiationType">
-      <option value="">Select a type</option>
-      <option value="distributive">Distributive (zero-sum)</option>
-      <option value="integrative">Integrative (win-win)</option>
-      <option value="multi-party">Multi-party</option>
-    </select>
-  </div>
-
-  <!-- Philosophical Frameworks -->
-  <div class="frameworks">
-    <h3>Philosophical Frameworks</h3>
-    <div *ngFor="let framework of frameworks">
-      <input type="checkbox" [(ngModel)]="framework.selected" />
-      {{ framework.name }}
+  
+    <!-- Philosophical Frameworks -->
+    <div class="frameworks">
+      <h3>Philosophical Frameworks</h3>
+      <div *ngFor="let framework of frameworks">
+        <input type="checkbox" [(ngModel)]="framework.selected" />
+        {{ framework.name }}
+      </div>
     </div>
+  
+    <button
+      class="submit-btn"
+      (click)="onSubmit()"
+      [disabled]="!scenario.trim() || stakeholders.length === 0"
+    >
+      Continue
+    </button>
   </div>
-
-  <button
-    class="submit-btn"
-    (click)="onSubmit()"
-    [disabled]="!scenario.trim() || stakeholders.length === 0"
-  >
-    Continue
-  </button>
+  @if (showResults) {
+    <div class = "answer-box">
+      <app-results></app-results>
+      </div>
+  }
+  
 </div>

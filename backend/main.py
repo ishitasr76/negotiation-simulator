@@ -1,7 +1,8 @@
 from fastapi import FastAPI, Body, Depends
 from typing import Annotated
 from models.negotiation import NegotiationInput, NegotiationOutput
-from services.openai import OpenAIService, openai_client
+from services.openai import OpenAIService
+from services.negotiation_service import NegotiationService
 
 app = FastAPI()
 
@@ -17,7 +18,7 @@ def handle_negotiation(
         NegotiationInput,
         Body(description="Negotiation scenario input")
     ],
-    openai_svc: Annotated[OpenAIService, Depends(openai_client)],
+    negotiation_svc: Annotated[NegotiationService, Depends(NegotiationService)]
 ):
     """Handles a negotiation request and returns a generated mock negotiation result."""
-    return openai_svc.generate_negotiation_summary(input_data, openai_svc)
+    return negotiation_svc.generate_negotiation_summary(input_data)

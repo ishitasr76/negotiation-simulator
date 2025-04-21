@@ -26,7 +26,7 @@ class NegotiationService:
         Scenario: {scenario}
 
         Stakeholders:
-        {chr(10).join([f"- {s['name']} ({s['role']}): {s['description']}" for s in stakeholders])}
+        {chr(10).join([f"- {s.name} ({s.role}): {s.description}" for s in stakeholders])}
 
         Negotiation Type: {negotiation_type}
         Philosophical Frameworks: {', '.join(frameworks)}

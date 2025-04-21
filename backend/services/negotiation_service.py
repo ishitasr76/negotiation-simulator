@@ -1,8 +1,8 @@
 from typing import Annotated
 from fastapi import Depends
-from ..env import get_session
-from openai import OpenAIService
-from ..models.negotiation import NegotiationInput, NegotiationOutput
+from env import getenv
+from .openai import OpenAIService
+from models.negotiation import NegotiationInput, NegotiationOutput
 
 class NegotiationService:
     def __init__(

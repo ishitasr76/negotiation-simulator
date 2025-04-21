@@ -5,7 +5,7 @@ This module encapsulates Azure OpenAI API calls and provides a clean interface
 for making AI completion requests using Pydantic models for response parsing.
 """
 
-from ..env import getenv
+from env import getenv
 from typing import Type, TypeVar, Annotated
 from fastapi import Depends
 from pydantic import BaseModel

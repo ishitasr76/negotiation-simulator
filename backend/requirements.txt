@@ -1,4 +1,5 @@
 # backend/requirements.txt
+fastapi[standard]
 fastapi
 uvicorn
 openai
